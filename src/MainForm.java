@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainForm {
     private JTextField txtNome;
@@ -6,6 +8,21 @@ public class MainForm {
     private JButton btnValidar;
     private JPanel mainPanel;
     private JLabel txtResultado;
+
+    public MainForm(){
+
+        btnValidar.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        //Obter nome do input
+                        String nomeDigitado = txtNome.getText();
+
+                        txtResultado.setText(nomeDigitado);
+
+                    }
+                }
+        );
+    }
 
     public static void main(String[] args) {
 
